@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="ParkFlow Billing and Transaction Management">
+  <title>ParkFlow - Billing</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.min.js"></script>
+</head>
+<body>
+<div class="app-layout">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-icon">P</div>
+      <div><h2>ParkFlow</h2><span>Operator Panel</span></div>
+    </div>
+    <nav class="nav-items">
+      <a href="/" class="nav-item" id="nav-dashboard">
+        <span class="icon">📊</span><span>Dashboard</span>
+      </a>
+      <a href="/billing" class="nav-item active" id="nav-billing">
+        <span class="icon">💳</span><span>Billing</span>
+      </a>
+    </nav>
+    <div class="sidebar-user">
+      <div class="avatar">AR</div>
+      <div class="info"><div class="name">Alex Rivera</div><div class="role">Urban Park Manager</div></div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <main class="main-content">
+    <!-- Topbar -->
+    <div class="topbar">
+      <div class="topbar-left">
+        <div class="search-box">
+          <span class="search-icon">🔍</span>
+          <input type="text" placeholder="Search plates, transactions, or logs..." id="search-input">
+        </div>
+      </div>
+      <div class="topbar-right">
+        <div class="topbar-icon">🔔</div>
+        <div class="topbar-icon">⚙️</div>
+        <div class="admin-label">ParkFlow Admin</div>
+      </div>
+    </div>
+
+    <!-- Billing Metrics -->
+    <div class="billing-metrics">
+      <div class="billing-card animate-in delay-1">
+        <div class="b-icon" style="background:var(--primary-light);color:var(--primary);">🚗</div>
+        <div>
+          <h3>Total Cars Parked Today</h3>
+          <div class="b-value" id="total-cars">0</div>
+          <div class="b-trend">↗ 12% from yesterday</div>
+        </div>
+      </div>
+      <div class="billing-card animate-in delay-2">
+        <div class="b-icon" style="background:var(--green-bg);color:var(--green);">💰</div>
+        <div>
+          <h3>Total Revenue Collected Today</h3>
+          <div class="b-value" id="total-revenue">₹0.00</div>
+          <div class="b-trend">↗ 8.4% from yesterday</div>
+        </div>
+      </div>
+      <div class="billing-card animate-in delay-3">
+        <div class="b-icon" style="background:#eef2ff;color:#4f46e5;">📅</div>
+        <div>
+          <h3>Weekly Collection</h3>
+          <div class="b-value" id="weekly-revenue">₹0.00</div>
+          <div class="b-trend">↗ 4.2% from last week</div>
+        </div>
+      </div>
+      <div class="billing-card animate-in delay-4">
+        <div class="b-icon" style="background:#fef3c7;color:#d97706;">📊</div>
+        <div>
+          <h3>Monthly Collection</h3>
+          <div class="b-value" id="monthly-revenue">₹0.00</div>
+          <div class="b-trend">↗ 15% from last month</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Car Activity Logs -->
+    <div class="logs-section animate-in">
+      <div class="logs-header">
+        <h3>Car Activity Logs</h3>
+        <div class="logs-actions">
+          <button class="btn-export-csv" id="btn-export">Export CSV</button>
+          <button class="btn-filter-activity" id="btn-filter">Filter Activity</button>
+        </div>
+      </div>
+      <table class="logs-table">
+        <thead>
+          <tr>
+            <th>Car Plate Number</th>
+            <th>Entry Time</th>
+            <th>Exit Time</th>
+            <th>Date</th>
+            <th>Total Bill</th>
+            <th>Wallet Balance</th>
+            <th>Extra Charges</th>
+          </tr>
+        </thead>
+        <tbody id="logs-tbody">
+          <tr><td colspan="7" style="text-align:center;color:var(--text-muted);padding:32px;">Waiting for data...</td></tr>
+        </tbody>
+      </table>
+      <div class="view-all-link" id="view-all-records">View All Records</div>
+    </div>
+
+    <!-- Bottom Row -->
+    <div class="billing-bottom">
+      <!-- Live Activity Feed -->
+      <div class="activity-feed animate-in delay-1">
+        <div class="feed-title">Live Activity Feed <div class="feed-live-dot"></div></div>
+        <div id="activity-feed-list">
+          <div style="text-align:center;color:var(--text-muted);padding:24px;font-size:13px;">Waiting for activity...</div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div>
+        <!-- Quick Billing -->
+        <div class="quick-billing animate-in delay-2">
+          <h3>Quick Checkout</h3>
+          <p>Enter plate number to manually check out a non-FASTag vehicle.</p>
+          <input type="text" placeholder="Enter Plate Number" id="plate-input">
+          <button class="btn-calc" id="btn-calculate">Calculate Bill</button>
+          <div id="quick-billing-result" style="margin-top: 15px; font-size: 15px; line-height: 1.5; color: var(--text);"></div>
+          <button class="btn-calc" id="btn-checkout" style="display: none; margin-top: 10px; background-color: var(--green);">Collect Cash & Checkout</button>
+        </div>
+
+        <!-- Manual Vehicle Entry -->
+        <div class="quick-billing animate-in delay-3" style="margin-top: 20px;">
+          <h3>Manual Vehicle Entry</h3>
+          <p>Register a non-FASTag vehicle to start the billing timer.</p>
+          <input type="text" placeholder="Enter Plate Number" id="manual-entry-plate">
+          <button class="btn-calc" id="btn-manual-entry" style="background-color: var(--primary);">Register Entry</button>
+          <div id="manual-entry-result" style="margin-top: 15px; font-size: 14px;"></div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script src="/static/js/billing.js"></script>
+</body>
+</html>
