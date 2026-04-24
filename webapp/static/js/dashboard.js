@@ -1,6 +1,7 @@
 // ParkFlow Dashboard - Real-time parking grid & metrics
 const socket = io();
 let allSlots = [];
+let currentActivityFilter = 'all';
 
 // ── Fetch & Render ──────────────────────────────────────────
 async function fetchMetrics() {
@@ -97,10 +98,15 @@ function renderGrid(slots) {
 async function fetchActivity() {
   try {
     const res = await fetch('/api/activity');
-    const logs = await res.json();
+    let logs = await res.json();
+
+    if (currentActivityFilter !== 'all') {
+      logs = logs.filter(l => l.type === currentActivityFilter);
+    }
+
     const list = document.getElementById('activity-feed-list');
     if (!logs.length) {
-      list.innerHTML = '<div style="text-align:center;color:var(--text-muted);padding:24px;font-size:13px;">No activity yet</div>';
+      list.innerHTML = `<div style="text-align:center;color:var(--text-muted);padding:24px;font-size:13px;">No ${currentActivityFilter.replace('_', ' ')} activity yet</div>`;
       return;
     }
     list.innerHTML = logs.slice(0, 10).map(log => {
@@ -157,8 +163,88 @@ socket.on('video_ended', () => {
   console.log('Video processing complete');
 });
 
+let weeklyChart = null;
+
+async function initWeeklyChart() {
+    try {
+        const res = await fetch('/api/weekly_stats');
+        const data = await res.json();
+        
+        const ctx = document.getElementById('weeklyChart').getContext('2d');
+        const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary').trim() || '#2563EB';
+        
+        weeklyChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: data.map(d => d.day),
+                datasets: [{
+                    label: 'Vehicles Parked',
+                    data: data.map(d => d.cars),
+                    backgroundColor: primaryColor + 'cc', // with some transparency
+                    borderColor: primaryColor,
+                    borderWidth: 1,
+                    borderRadius: 6,
+                    hoverBackgroundColor: primaryColor
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        backgroundColor: '#1e293b',
+                        titleFont: { family: 'Inter', size: 13 },
+                        bodyFont: { family: 'Inter', size: 12 },
+                        padding: 12,
+                        cornerRadius: 8,
+                        displayColors: false
+                    }
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: '#f1f5f9', drawBorder: false },
+                        ticks: { font: { family: 'Inter', size: 11 }, color: '#64748b', stepSize: 10 }
+                    },
+                    x: {
+                        grid: { display: false, drawBorder: false },
+                        ticks: { font: { family: 'Inter', size: 11 }, color: '#64748b' }
+                    }
+                }
+            }
+        });
+    } catch (e) { console.error('Chart init error:', e); }
+}
+
+async function updateWeeklyChart() {
+    if (!weeklyChart) return;
+    try {
+        const res = await fetch('/api/weekly_stats');
+        const data = await res.json();
+        weeklyChart.data.labels = data.map(d => d.day);
+        weeklyChart.data.datasets[0].data = data.map(d => d.cars);
+        weeklyChart.update();
+    } catch (e) { console.error('Chart update error:', e); }
+}
+
 // ── Init ────────────────────────────────────────────────────
 fetchMetrics();
 fetchSlots();
 fetchActivity();
-setInterval(() => { fetchMetrics(); fetchActivity(); }, 3000);
+initWeeklyChart();
+setInterval(() => { 
+    fetchMetrics(); 
+    fetchActivity(); 
+    updateWeeklyChart();
+}, 5000);
+
+// ── Activity Filters ───────────────────────────────────────
+document.querySelectorAll('.feed-filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.feed-filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentActivityFilter = btn.dataset.filter;
+    fetchActivity();
+  });
+});

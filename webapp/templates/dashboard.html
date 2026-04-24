@@ -7,13 +7,14 @@
   <title>ParkFlow - Dashboard</title>
   <link rel="stylesheet" href="/static/css/styles.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
 </head>
 <body>
 <div class="app-layout">
   <!-- Sidebar -->
   <aside class="sidebar">
     <div class="sidebar-logo">
-      <div class="logo-icon">P</div>
+      <img src="/static/logo.png" class="logo-img" alt="Logo">
       <div><h2>ParkFlow</h2><span>Operator Panel</span></div>
     </div>
     <nav class="nav-items">
@@ -42,8 +43,7 @@
         </div>
       </div>
       <div class="topbar-right">
-        <div class="topbar-icon" title="Notifications">🔔</div>
-        <div class="topbar-icon" title="Settings">⚙️</div>
+        <!-- Icons removed -->
       </div>
     </div>
 
@@ -109,11 +109,33 @@
       </div>
     </div>
 
+    <!-- Weekly Occupancy Chart -->
+    <div class="grid-section animate-in delay-2" style="margin-top: 28px;">
+      <div class="grid-header">
+        <h3>Weekly Occupancy Trends</h3>
+        <div style="font-size: 12px; color: var(--text-muted);">Total vehicles parked per day</div>
+      </div>
+      <div style="height: 300px; position: relative;">
+        <canvas id="weeklyChart"></canvas>
+      </div>
+    </div>
+
     <!-- Bottom Row -->
-    <div class="bottom-row" style="display: flex;">
+    <div class="bottom-row">
       <!-- Live Activity Feed -->
-      <div class="activity-feed animate-in delay-1" style="flex: 1; background: var(--card); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow);">
-        <div class="feed-title" style="display: flex; align-items: center; gap: 8px; font-weight: 600; margin-bottom: 20px;">Live Activity Feed <div class="feed-live-dot" style="width: 8px; height: 8px; background: var(--red); border-radius: 50%; box-shadow: 0 0 8px var(--red); animation: pulse 2s infinite;"></div></div>
+      <div class="activity-feed animate-in delay-1">
+        <div class="feed-title">
+          <div style="display: flex; align-items: center; gap: 8px;">
+            Live Activity Feed 
+            <div class="feed-live-dot"></div>
+          </div>
+          <div class="feed-filters">
+            <button class="feed-filter-btn active" data-filter="all">All</button>
+            <button class="feed-filter-btn" data-filter="car_entered">Entries</button>
+            <button class="feed-filter-btn" data-filter="car_exited">Exits</button>
+            <button class="feed-filter-btn" data-filter="system_alert">Errors</button>
+          </div>
+        </div>
         <div id="activity-feed-list">
           <div style="text-align:center;color:var(--text-muted);padding:24px;font-size:13px;">Waiting for activity...</div>
         </div>

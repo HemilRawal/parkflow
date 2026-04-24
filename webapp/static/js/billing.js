@@ -31,23 +31,13 @@ async function fetchTransactions() {
 function renderTransactions() {
     const tbody = document.getElementById('logs-tbody');
     if (!allTransactions.length) {
-      tbody.innerHTML = '<tr><td colspan="7" style="text-align:center;color:var(--text-muted);padding:32px;">No transactions yet</td></tr>';
+      tbody.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--text-muted);padding:32px;">No transactions yet</td></tr>';
       document.getElementById('view-all-records').style.display = 'none';
       return;
     }
     
     const toShow = allTransactions.slice(0, maxTransactionsToShow);
     tbody.innerHTML = toShow.map(t => {
-      let walletCol;
-      if (t.status === 'In Progress') {
-        walletCol = '<span class="in-progress">---</span>';
-      } else if (t.wallet_remaining === 'CASH/CARD') {
-        walletCol = '<span style="color:var(--primary);">CASH/CARD</span>';
-      } else {
-        const bal = Number(t.wallet_remaining) || 0;
-        const balColor = bal >= 0 ? 'var(--green)' : 'var(--red)';
-        walletCol = `<span style="color:${balColor};font-weight:600;">₹${bal.toLocaleString('en-IN', {minimumFractionDigits:2})}</span>`;
-      }
       return `
       <tr>
         <td class="plate">${t.plate}</td>
@@ -55,7 +45,6 @@ function renderTransactions() {
         <td>${t.exit_time === '---' ? '<span class="in-progress">---</span>' : t.exit_time}</td>
         <td>${t.date}</td>
         <td>${t.status === 'In Progress' ? '<span class="in-progress">In Progress</span>' : '₹' + t.total_bill.toLocaleString('en-IN', {minimumFractionDigits:2})}</td>
-        <td>${walletCol}</td>
         <td><span class="badge ${t.extra_charges === 'NONE' ? 'none' : 'improper'}">${t.extra_charges}</span></td>
       </tr>
     `;
@@ -94,8 +83,7 @@ async function fetchActivity() {
         detail = `Plate: ${log.car_id} · Alert: ${log.alert}`;
       } else {
         iconClass = 'exited'; icon = '💳'; title = 'Car Exited/Paid'; dotClass = 'blue';
-        const walletBal = log.wallet_remaining !== undefined ? ` · Wallet: ₹${log.wallet_remaining}` : '';
-        detail = `Plate: ${log.car_id} · Payment: ₹${log.payment ? log.payment.toLocaleString('en-IN') : '0'}${walletBal}`;
+        detail = `Plate: ${log.car_id} · Payment: ₹${log.payment ? log.payment.toLocaleString('en-IN') : '0'}`;
       }
       return `
         <div class="feed-item">
@@ -129,18 +117,7 @@ document.getElementById('btn-calculate').addEventListener('click', async () => {
   const activeTxn = allTransactions.find(t => t.car_id === carId && t.status === 'In Progress');
   
   if (activeTxn) {
-      // Fetch wallet balance
-      let walletInfo = '';
-      try {
-        const walletRes = await fetch(`/api/wallet/${carId}`);
-        const walletData = await walletRes.json();
-        const balance = walletData.balance || 0;
-        const balanceColor = balance >= activeTxn.total_bill ? 'var(--green)' : 'var(--red)';
-        walletInfo = `Wallet Balance: <b style="color:${balanceColor};">₹${balance.toLocaleString('en-IN', {minimumFractionDigits:2})}</b>`;
-      } catch(e) {
-        walletInfo = 'Wallet: <span style="color:var(--text-muted);">N/A</span>';
-      }
-      resultDiv.innerHTML = `Car: <b>${carId}</b> <br> Time Elapsed: <b>${activeTxn.duration_sec}s</b> <br> Current Bill: <b style="color:var(--green);">₹${activeTxn.total_bill}</b> <br> ${walletInfo}`;
+      resultDiv.innerHTML = `Car: <b>${carId}</b> <br> Time Elapsed: <b>${activeTxn.duration_sec}s</b> <br> Current Bill: <b style="color:var(--green);">₹${activeTxn.total_bill}</b>`;
       checkoutBtn.style.display = 'block';
   } else {
       resultDiv.innerHTML = '<span style="color:var(--red);">Car not found in active sessions.</span>';

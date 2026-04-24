@@ -76,6 +76,13 @@ def api_billing_summary():
     except Exception as e:
         return jsonify({"total_cars_today": 0, "total_revenue_today": 0})
 
+@app.route("/api/weekly_stats")
+def api_weekly_stats():
+    try:
+        return jsonify(billing.get_weekly_stats())
+    except Exception as e:
+        return jsonify([])
+
 @app.route("/api/wallets")
 def api_wallets():
     return jsonify(firebase_db.get_all_wallets())

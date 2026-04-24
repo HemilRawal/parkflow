@@ -162,3 +162,29 @@ class BillingEngine:
             "weekly_revenue": round(self.total_revenue_today + 14500, 2),
             "monthly_revenue": round(self.total_revenue_today + 62300, 2),
         }
+
+    def get_weekly_stats(self):
+        """Returns cars parked per day for the last 7 days."""
+        from datetime import timedelta
+        today = datetime.now().date()
+
+        # Count real transactions per day from this session
+        counts = {}
+        for txn in self.transactions:
+            try:
+                d = datetime.strptime(txn["date"], "%b %d, %Y").date()
+                counts[d] = counts.get(d, 0) + 1
+            except Exception:
+                pass
+
+        # Build 7-day dataset (Mon–today), filling past days with realistic demo data
+        base_demo = [38, 52, 47, 61, 55, 43, self.total_cars_today]
+        result = []
+        for i in range(6, -1, -1):
+            day = today - timedelta(days=i)
+            day_name = day.strftime("%a")  # Mon, Tue, etc.
+            count = counts.get(day, base_demo[6 - i])
+            result.append({"day": day_name, "date": day.strftime("%b %d"), "cars": count})
+
+        return result
+
