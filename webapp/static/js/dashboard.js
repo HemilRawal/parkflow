@@ -164,6 +164,8 @@ socket.on('video_ended', () => {
 });
 
 let weeklyChart = null;
+let hourlyChart = null;
+let zoneChart = null;
 
 async function initWeeklyChart() {
     try {
@@ -228,15 +230,96 @@ async function updateWeeklyChart() {
     } catch (e) { console.error('Chart update error:', e); }
 }
 
+async function initHourlyChart() {
+    try {
+        const res = await fetch('/api/hourly_occupancy');
+        const data = await res.json();
+        const ctx = document.getElementById('hourlyChart').getContext('2d');
+        const greenColor = '#22C55E';
+        
+        hourlyChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: data.map(d => d.hour),
+                datasets: [{
+                    label: 'Entries',
+                    data: data.map(d => d.count),
+                    borderColor: greenColor,
+                    backgroundColor: greenColor + '22',
+                    fill: true,
+                    tension: 0.4,
+                    pointRadius: 4,
+                    pointBackgroundColor: greenColor
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#f1f5f9' } },
+                    x: { grid: { display: false } }
+                }
+            }
+        });
+    } catch (e) { console.error('Hourly chart init error:', e); }
+}
+
+async function initZoneChart() {
+    try {
+        const res = await fetch('/api/zone_distribution');
+        const data = await res.json();
+        const ctx = document.getElementById('zoneChart').getContext('2d');
+        
+        zoneChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: data.map(d => d.zone),
+                datasets: [{
+                    data: data.map(d => d.value),
+                    backgroundColor: ['#2563EB', '#22C55E', '#F59E0B', '#EF4444'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } }
+                },
+                cutout: '70%'
+            }
+        });
+    } catch (e) { console.error('Zone chart init error:', e); }
+}
+
+async function updateNewCharts() {
+    if (hourlyChart) {
+        const res = await fetch('/api/hourly_occupancy');
+        const data = await res.json();
+        hourlyChart.data.datasets[0].data = data.map(d => d.count);
+        hourlyChart.update();
+    }
+    if (zoneChart) {
+        const res = await fetch('/api/zone_distribution');
+        const data = await res.json();
+        zoneChart.data.datasets[0].data = data.map(d => d.value);
+        zoneChart.update();
+    }
+}
+
 // ── Init ────────────────────────────────────────────────────
 fetchMetrics();
 fetchSlots();
 fetchActivity();
 initWeeklyChart();
+initHourlyChart();
+initZoneChart();
 setInterval(() => { 
     fetchMetrics(); 
     fetchActivity(); 
     updateWeeklyChart();
+    updateNewCharts();
 }, 5000);
 
 // ── Activity Filters ───────────────────────────────────────

@@ -83,6 +83,32 @@ def api_weekly_stats():
     except Exception as e:
         return jsonify([])
 
+@app.route("/api/hourly_occupancy")
+def api_hourly_occupancy():
+    try:
+        return jsonify(billing.get_hourly_occupancy())
+    except Exception as e:
+        return jsonify([])
+
+@app.route("/api/zone_distribution")
+def api_zone_distribution():
+    try:
+        slots = detection.get_slots()
+        # Count occupied slots per camera
+        zones = {"Zone 1": 0, "Zone 2": 0}
+        for s in slots:
+            if s["status"] == "occupied":
+                if s["id"].startswith("C1"):
+                    zones["Zone 1"] += 1
+                elif s["id"].startswith("C2"):
+                    zones["Zone 2"] += 1
+        
+        # Format for Chart.js
+        return jsonify([{"zone": k, "value": v} for k, v in zones.items()])
+    except Exception as e:
+        print(f"[API] Zone distribution error: {e}")
+        return jsonify([])
+
 @app.route("/api/wallets")
 def api_wallets():
     return jsonify(firebase_db.get_all_wallets())
@@ -190,4 +216,4 @@ if __name__ == "__main__":
     det_thread = threading.Thread(target=start_detection_delayed, daemon=True)
     det_thread.start()
 
-    socketio.run(app, host="0.0.0.0", port=5000, debug=False, allow_unsafe_werkzeug=True)
+    socketio.run(app, host="0.0.0.0", port=5000, debug=True, allow_unsafe_werkzeug=True)

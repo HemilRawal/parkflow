@@ -1,7 +1,7 @@
 {
   "wallets": {
     "CAR-0001": {
-      "balance": 500,
+      "balance": 315.67,
       "car_id": "CAR-0001"
     },
     "CAR-0002": {
@@ -9,42 +9,973 @@
       "car_id": "CAR-0002"
     },
     "CAR-0003": {
-      "balance": 500,
+      "balance": 373.08,
       "car_id": "CAR-0003"
     },
     "CAR-0004": {
-      "balance": 500,
+      "balance": 232.88,
       "car_id": "CAR-0004"
+    },
+    "CAR-0005": {
+      "balance": 496.78,
+      "car_id": "CAR-0005"
+    },
+    "CAR-0006": {
+      "balance": 492.34,
+      "car_id": "CAR-0006"
+    },
+    "CAR-0007": {
+      "balance": 496.03,
+      "car_id": "CAR-0007"
+    },
+    "CAR-0008": {
+      "balance": 500,
+      "car_id": "CAR-0008"
+    },
+    "CAR-0009": {
+      "balance": 468.78,
+      "car_id": "CAR-0009"
+    },
+    "CAR-0010": {
+      "balance": 450.44,
+      "car_id": "CAR-0010"
+    },
+    "CAR-0011": {
+      "balance": 500,
+      "car_id": "CAR-0011"
+    },
+    "CAR-0012": {
+      "balance": 442.14,
+      "car_id": "CAR-0012"
+    },
+    "CAR-0013": {
+      "balance": 500,
+      "car_id": "CAR-0013"
+    },
+    "CAR-0014": {
+      "balance": 496.63,
+      "car_id": "CAR-0014"
+    },
+    "CAR-0015": {
+      "balance": 495.79,
+      "car_id": "CAR-0015"
+    },
+    "CAR-0016": {
+      "balance": 495.7,
+      "car_id": "CAR-0016"
+    },
+    "CAR-0017": {
+      "balance": 500,
+      "car_id": "CAR-0017"
+    },
+    "CAR-0018": {
+      "balance": 356.88,
+      "car_id": "CAR-0018"
+    },
+    "CAR-0019": {
+      "balance": 496.96,
+      "car_id": "CAR-0019"
+    },
+    "CAR-0020": {
+      "balance": 495.55,
+      "car_id": "CAR-0020"
+    },
+    "CAR-0021": {
+      "balance": 488.8,
+      "car_id": "CAR-0021"
+    },
+    "CAR-0022": {
+      "balance": 494.65,
+      "car_id": "CAR-0022"
+    },
+    "CAR-0023": {
+      "balance": 496.13,
+      "car_id": "CAR-0023"
+    },
+    "CAR-0024": {
+      "balance": 496.61,
+      "car_id": "CAR-0024"
+    },
+    "CAR-0025": {
+      "balance": 496.9,
+      "car_id": "CAR-0025"
+    },
+    "CAR-0026": {
+      "balance": 487.48,
+      "car_id": "CAR-0026"
+    },
+    "CAR-0027": {
+      "balance": 444.26,
+      "car_id": "CAR-0027"
+    },
+    "CAR-0028": {
+      "balance": 484.2,
+      "car_id": "CAR-0028"
+    },
+    "CAR-0029": {
+      "balance": 496.65,
+      "car_id": "CAR-0029"
+    },
+    "CAR-0030": {
+      "balance": 491.62,
+      "car_id": "CAR-0030"
+    },
+    "CAR-0031": {
+      "balance": 485.98,
+      "car_id": "CAR-0031"
+    },
+    "CAR-0032": {
+      "balance": 497.04,
+      "car_id": "CAR-0032"
+    },
+    "CAR-0033": {
+      "balance": 493.61,
+      "car_id": "CAR-0033"
+    },
+    "CAR-0034": {
+      "balance": 500,
+      "car_id": "CAR-0034"
+    },
+    "CAR-0035": {
+      "balance": 491.11,
+      "car_id": "CAR-0035"
+    },
+    "CAR-0036": {
+      "balance": 500,
+      "car_id": "CAR-0036"
+    },
+    "CAR-0037": {
+      "balance": 495.12,
+      "car_id": "CAR-0037"
+    },
+    "CAR-0038": {
+      "balance": 500,
+      "car_id": "CAR-0038"
+    },
+    "CAR-0039": {
+      "balance": 500,
+      "car_id": "CAR-0039"
     }
   },
-  "transactions": [],
+  "transactions": [
+    {
+      "car_id": "CAR-0037",
+      "plate": "PLT-0037",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:21 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 5,
+      "base_bill": 4.88,
+      "fine": 0,
+      "total_bill": 4.88,
+      "extra_charges": "NONE",
+      "wallet_remaining": 495.12
+    },
+    {
+      "car_id": "CAR-0035",
+      "plate": "PLT-0035",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:21 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 9,
+      "base_bill": 8.89,
+      "fine": 0,
+      "total_bill": 8.89,
+      "extra_charges": "NONE",
+      "wallet_remaining": 491.11
+    },
+    {
+      "car_id": "CAR-0018",
+      "plate": "PLT-0018",
+      "slot_id": "C1-B-01",
+      "entry_time": "09:19 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 143,
+      "base_bill": 143.12,
+      "fine": 0,
+      "total_bill": 143.12,
+      "extra_charges": "NONE",
+      "wallet_remaining": 356.88
+    },
+    {
+      "car_id": "CAR-0027",
+      "plate": "PLT-0027",
+      "slot_id": "C1-B-02",
+      "entry_time": "09:20 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 56,
+      "base_bill": 55.74,
+      "fine": 0,
+      "total_bill": 55.74,
+      "extra_charges": "NONE",
+      "wallet_remaining": 444.26
+    },
+    {
+      "car_id": "CAR-0033",
+      "plate": "PLT-0033",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:21 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 6,
+      "base_bill": 6.39,
+      "fine": 0,
+      "total_bill": 6.39,
+      "extra_charges": "NONE",
+      "wallet_remaining": 493.61
+    },
+    {
+      "car_id": "CAR-0031",
+      "plate": "PLT-0031",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:21 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 14,
+      "base_bill": 14.02,
+      "fine": 0,
+      "total_bill": 14.02,
+      "extra_charges": "NONE",
+      "wallet_remaining": 485.98
+    },
+    {
+      "car_id": "CAR-0032",
+      "plate": "PLT-0032",
+      "slot_id": "C1-A-03",
+      "entry_time": "09:21 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 3,
+      "base_bill": 2.96,
+      "fine": 0,
+      "total_bill": 2.96,
+      "extra_charges": "NONE",
+      "wallet_remaining": 497.04
+    },
+    {
+      "car_id": "CAR-0030",
+      "plate": "PLT-0030",
+      "slot_id": "C1-A-03",
+      "entry_time": "09:21 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 8,
+      "base_bill": 8.38,
+      "fine": 0,
+      "total_bill": 8.38,
+      "extra_charges": "NONE",
+      "wallet_remaining": 491.62
+    },
+    {
+      "car_id": "CAR-0028",
+      "plate": "PLT-0028",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:20 PM",
+      "exit_time": "09:21 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 16,
+      "base_bill": 15.8,
+      "fine": 0,
+      "total_bill": 15.8,
+      "extra_charges": "NONE",
+      "wallet_remaining": 484.2
+    },
+    {
+      "car_id": "CAR-0029",
+      "plate": "PLT-0029",
+      "slot_id": "C1-A-03",
+      "entry_time": "09:20 PM",
+      "exit_time": "09:20 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 3,
+      "base_bill": 3.35,
+      "fine": 0,
+      "total_bill": 3.35,
+      "extra_charges": "NONE",
+      "wallet_remaining": 496.65
+    },
+    {
+      "car_id": "CAR-0004",
+      "plate": "PLT-0004",
+      "slot_id": "C1-A-03",
+      "entry_time": "09:16 PM",
+      "exit_time": "09:20 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 267,
+      "base_bill": 267.12,
+      "fine": 0,
+      "total_bill": 267.12,
+      "extra_charges": "NONE",
+      "wallet_remaining": 232.88
+    },
+    {
+      "car_id": "CAR-0026",
+      "plate": "PLT-0026",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:20 PM",
+      "exit_time": "09:20 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 13,
+      "base_bill": 12.52,
+      "fine": 0,
+      "total_bill": 12.52,
+      "extra_charges": "NONE",
+      "wallet_remaining": 487.48
+    },
+    {
+      "car_id": "CAR-0025",
+      "plate": "PLT-0025",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:20 PM",
+      "exit_time": "09:20 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 3,
+      "base_bill": 3.1,
+      "fine": 0,
+      "total_bill": 3.1,
+      "extra_charges": "NONE",
+      "wallet_remaining": 496.9
+    },
+    {
+      "car_id": "CAR-0024",
+      "plate": "PLT-0024",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:20 PM",
+      "exit_time": "09:20 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 3,
+      "base_bill": 3.39,
+      "fine": 0,
+      "total_bill": 3.39,
+      "extra_charges": "NONE",
+      "wallet_remaining": 496.61
+    },
+    {
+      "car_id": "CAR-0023",
+      "plate": "PLT-0023",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:20 PM",
+      "exit_time": "09:20 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 4,
+      "base_bill": 3.87,
+      "fine": 0,
+      "total_bill": 3.87,
+      "extra_charges": "NONE",
+      "wallet_remaining": 496.13
+    },
+    {
+      "car_id": "CAR-0022",
+      "plate": "PLT-0022",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:19 PM",
+      "exit_time": "09:20 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 5,
+      "base_bill": 5.35,
+      "fine": 0,
+      "total_bill": 5.35,
+      "extra_charges": "NONE",
+      "wallet_remaining": 494.65
+    },
+    {
+      "car_id": "CAR-0021",
+      "plate": "PLT-0021",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:19 PM",
+      "exit_time": "09:19 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 11,
+      "base_bill": 11.2,
+      "fine": 0,
+      "total_bill": 11.2,
+      "extra_charges": "NONE",
+      "wallet_remaining": 488.8
+    },
+    {
+      "car_id": "CAR-0020",
+      "plate": "PLT-0020",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:19 PM",
+      "exit_time": "09:19 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 4,
+      "base_bill": 4.45,
+      "fine": 0,
+      "total_bill": 4.45,
+      "extra_charges": "NONE",
+      "wallet_remaining": 495.55
+    },
+    {
+      "car_id": "CAR-0019",
+      "plate": "PLT-0019",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:19 PM",
+      "exit_time": "09:19 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 3,
+      "base_bill": 3.04,
+      "fine": 0,
+      "total_bill": 3.04,
+      "extra_charges": "NONE",
+      "wallet_remaining": 496.96
+    },
+    {
+      "car_id": "CAR-0012",
+      "plate": "PLT-0012",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:18 PM",
+      "exit_time": "09:19 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 58,
+      "base_bill": 57.86,
+      "fine": 0,
+      "total_bill": 57.86,
+      "extra_charges": "NONE",
+      "wallet_remaining": 442.14
+    },
+    {
+      "car_id": "CAR-0001",
+      "plate": "PLT-0001",
+      "slot_id": "C1-B-01",
+      "entry_time": "09:16 PM",
+      "exit_time": "09:19 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 184,
+      "base_bill": 184.33,
+      "fine": 0,
+      "total_bill": 184.33,
+      "extra_charges": "NONE",
+      "wallet_remaining": 315.67
+    },
+    {
+      "car_id": "CAR-0016",
+      "plate": "PLT-0016",
+      "slot_id": "C2-B-03",
+      "entry_time": "09:19 PM",
+      "exit_time": "09:19 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 4,
+      "base_bill": 4.3,
+      "fine": 0,
+      "total_bill": 4.3,
+      "extra_charges": "NONE",
+      "wallet_remaining": 495.7
+    },
+    {
+      "car_id": "CAR-0015",
+      "plate": "PLT-0015",
+      "slot_id": "C2-B-03",
+      "entry_time": "09:18 PM",
+      "exit_time": "09:19 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 4,
+      "base_bill": 4.21,
+      "fine": 0,
+      "total_bill": 4.21,
+      "extra_charges": "NONE",
+      "wallet_remaining": 495.79
+    },
+    {
+      "car_id": "CAR-0014",
+      "plate": "PLT-0014",
+      "slot_id": "C2-B-03",
+      "entry_time": "09:18 PM",
+      "exit_time": "09:18 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 3,
+      "base_bill": 3.37,
+      "fine": 0,
+      "total_bill": 3.37,
+      "extra_charges": "NONE",
+      "wallet_remaining": 496.63
+    },
+    {
+      "car_id": "CAR-0010",
+      "plate": "PLT-0010",
+      "slot_id": "C2-B-03",
+      "entry_time": "09:17 PM",
+      "exit_time": "09:18 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 50,
+      "base_bill": 49.56,
+      "fine": 0,
+      "total_bill": 49.56,
+      "extra_charges": "NONE",
+      "wallet_remaining": 450.44
+    },
+    {
+      "car_id": "CAR-0003",
+      "plate": "PLT-0003",
+      "slot_id": "C2-A-03",
+      "entry_time": "09:16 PM",
+      "exit_time": "09:18 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 127,
+      "base_bill": 126.92,
+      "fine": 0,
+      "total_bill": 126.92,
+      "extra_charges": "NONE",
+      "wallet_remaining": 373.08
+    },
+    {
+      "car_id": "CAR-0009",
+      "plate": "PLT-0009",
+      "slot_id": "C2-B-03",
+      "entry_time": "09:17 PM",
+      "exit_time": "09:17 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 31,
+      "base_bill": 31.22,
+      "fine": 0,
+      "total_bill": 31.22,
+      "extra_charges": "NONE",
+      "wallet_remaining": 468.78
+    },
+    {
+      "car_id": "CAR-0007",
+      "plate": "PLT-0007",
+      "slot_id": "C2-B-01",
+      "entry_time": "09:17 PM",
+      "exit_time": "09:17 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 4,
+      "base_bill": 3.97,
+      "fine": 0,
+      "total_bill": 3.97,
+      "extra_charges": "NONE",
+      "wallet_remaining": 496.03
+    },
+    {
+      "car_id": "CAR-0006",
+      "plate": "PLT-0006",
+      "slot_id": "C2-B-01",
+      "entry_time": "09:17 PM",
+      "exit_time": "09:17 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 8,
+      "base_bill": 7.66,
+      "fine": 0,
+      "total_bill": 7.66,
+      "extra_charges": "NONE",
+      "wallet_remaining": 492.34
+    },
+    {
+      "car_id": "CAR-0005",
+      "plate": "PLT-0005",
+      "slot_id": "C2-B-02",
+      "entry_time": "09:16 PM",
+      "exit_time": "09:17 PM",
+      "date": "Apr 25, 2026",
+      "duration_sec": 3,
+      "base_bill": 3.22,
+      "fine": 0,
+      "total_bill": 3.22,
+      "extra_charges": "NONE",
+      "wallet_remaining": 496.78
+    }
+  ],
   "activity_logs": [
     {
       "type": "car_entered",
+      "car_id": "CAR-0039",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:22 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0037",
+      "slot_id": "C2-A-03",
+      "payment": 4.88,
+      "wallet_remaining": 495.12,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0038",
+      "slot_id": "C1-B-02",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0037",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0036",
+      "slot_id": "C1-B-01",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0035",
+      "slot_id": "C2-A-03",
+      "payment": 8.89,
+      "wallet_remaining": 491.11,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0018",
+      "slot_id": "C1-B-01",
+      "payment": 143.12,
+      "wallet_remaining": 356.88,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0035",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0027",
+      "slot_id": "C1-B-02",
+      "payment": 55.74,
+      "wallet_remaining": 444.26,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0033",
+      "slot_id": "C2-A-03",
+      "payment": 6.39,
+      "wallet_remaining": 493.61,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0034",
+      "slot_id": "C1-A-03",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0033",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0031",
+      "slot_id": "C2-A-03",
+      "payment": 14.02,
+      "wallet_remaining": 485.98,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0032",
+      "slot_id": "C1-A-03",
+      "payment": 2.96,
+      "wallet_remaining": 497.04,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0032",
+      "slot_id": "C1-A-03",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0030",
+      "slot_id": "C1-A-03",
+      "payment": 8.38,
+      "wallet_remaining": 491.62,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0031",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0028",
+      "slot_id": "C2-A-03",
+      "payment": 15.8,
+      "wallet_remaining": 484.2,
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0030",
+      "slot_id": "C1-A-03",
+      "timestamp": "09:21 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0029",
+      "slot_id": "C1-A-03",
+      "payment": 3.35,
+      "wallet_remaining": 496.65,
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0029",
+      "slot_id": "C1-A-03",
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
       "car_id": "CAR-0004",
       "slot_id": "C1-A-03",
-      "timestamp": "01:56 AM",
+      "payment": 267.12,
+      "wallet_remaining": 232.88,
+      "timestamp": "09:20 PM",
       "time_ago": "Just now"
     },
     {
       "type": "car_entered",
-      "car_id": "CAR-0003",
+      "car_id": "CAR-0028",
       "slot_id": "C2-A-03",
-      "timestamp": "01:56 AM",
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0026",
+      "slot_id": "C2-A-03",
+      "payment": 12.52,
+      "wallet_remaining": 487.48,
+      "timestamp": "09:20 PM",
       "time_ago": "Just now"
     },
     {
       "type": "car_entered",
-      "car_id": "CAR-0002",
-      "slot_id": "C2-A-01",
-      "timestamp": "01:56 AM",
+      "car_id": "CAR-0027",
+      "slot_id": "C1-B-02",
+      "timestamp": "09:20 PM",
       "time_ago": "Just now"
     },
     {
       "type": "car_entered",
+      "car_id": "CAR-0026",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0025",
+      "slot_id": "C2-A-03",
+      "payment": 3.1,
+      "wallet_remaining": 496.9,
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0025",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0024",
+      "slot_id": "C2-A-03",
+      "payment": 3.39,
+      "wallet_remaining": 496.61,
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0024",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0023",
+      "slot_id": "C2-A-03",
+      "payment": 3.87,
+      "wallet_remaining": 496.13,
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0023",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0022",
+      "slot_id": "C2-A-03",
+      "payment": 5.35,
+      "wallet_remaining": 494.65,
+      "timestamp": "09:20 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0022",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0021",
+      "slot_id": "C2-A-03",
+      "payment": 11.2,
+      "wallet_remaining": 488.8,
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0021",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0020",
+      "slot_id": "C2-A-03",
+      "payment": 4.45,
+      "wallet_remaining": 495.55,
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0020",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0019",
+      "slot_id": "C2-A-03",
+      "payment": 3.04,
+      "wallet_remaining": 496.96,
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0019",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0012",
+      "slot_id": "C2-A-03",
+      "payment": 57.86,
+      "wallet_remaining": 442.14,
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0018",
+      "slot_id": "C1-B-01",
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
       "car_id": "CAR-0001",
       "slot_id": "C1-B-01",
-      "timestamp": "01:56 AM",
+      "payment": 184.33,
+      "wallet_remaining": 315.67,
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0017",
+      "slot_id": "C2-B-03",
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0016",
+      "slot_id": "C2-B-03",
+      "payment": 4.3,
+      "wallet_remaining": 495.7,
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0016",
+      "slot_id": "C2-B-03",
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0015",
+      "slot_id": "C2-B-03",
+      "payment": 4.21,
+      "wallet_remaining": 495.79,
+      "timestamp": "09:19 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0015",
+      "slot_id": "C2-B-03",
+      "timestamp": "09:18 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_exited",
+      "car_id": "CAR-0014",
+      "slot_id": "C2-B-03",
+      "payment": 3.37,
+      "wallet_remaining": 496.63,
+      "timestamp": "09:18 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0014",
+      "slot_id": "C2-B-03",
+      "timestamp": "09:18 PM",
       "time_ago": "Just now"
     }
   ],

@@ -25,10 +25,7 @@
         <span class="icon">💳</span><span>Billing</span>
       </a>
     </nav>
-    <div class="sidebar-user">
-      <div class="avatar">MC</div>
-      <div class="info"><div class="name">Marcus Chen</div><div class="role">Shift Lead</div></div>
-    </div>
+    </nav>
   </aside>
 
   <!-- Main Content -->
@@ -37,10 +34,6 @@
     <div class="topbar">
       <div class="topbar-left">
         <div class="admin-label">ParkFlow Admin</div>
-        <div class="search-box">
-          <span class="search-icon">🔍</span>
-          <input type="text" placeholder="Search vehicle or slot..." id="search-input">
-        </div>
       </div>
       <div class="topbar-right">
         <!-- Icons removed -->
@@ -49,9 +42,14 @@
 
     <!-- Page Header -->
     <div class="page-header">
-      <h1>Urban Park Overview</h1>
-      <p>Real-time occupancy and facility monitoring.</p>
-      <div class="nearest-badge" id="nearest-badge">Loading...</div>
+      <div>
+        <h1>Urban Park Overview</h1>
+        <p>Real-time occupancy and facility monitoring.</p>
+      </div>
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div class="live-tag"><span class="blink-dot"></span> LIVE</div>
+        <div class="nearest-badge" id="nearest-badge">Loading...</div>
+      </div>
     </div>
 
     <!-- Metric Cards -->
@@ -117,6 +115,28 @@
       </div>
       <div style="height: 300px; position: relative;">
         <canvas id="weeklyChart"></canvas>
+      </div>
+    </div>
+
+    <!-- More Insights -->
+    <div class="charts-row animate-in delay-3">
+      <div class="grid-section">
+        <div class="grid-header">
+          <h3>Hourly Traffic</h3>
+          <div style="font-size: 12px; color: var(--text-muted);">Vehicle movement today</div>
+        </div>
+        <div style="height: 250px; position: relative;">
+          <canvas id="hourlyChart"></canvas>
+        </div>
+      </div>
+      <div class="grid-section">
+        <div class="grid-header">
+          <h3>Zone Distribution</h3>
+          <div style="font-size: 12px; color: var(--text-muted);">Occupancy by row</div>
+        </div>
+        <div style="height: 250px; position: relative;">
+          <canvas id="zoneChart"></canvas>
+        </div>
       </div>
     </div>
 

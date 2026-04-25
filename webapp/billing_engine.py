@@ -188,3 +188,31 @@ class BillingEngine:
 
         return result
 
+    def get_hourly_occupancy(self):
+        """Returns entries per hour for today."""
+        # Demo data + real session entries
+        hours = ["8am", "10am", "12pm", "2pm", "4pm", "6pm", "8pm", "10pm"]
+        counts = [12, 28, 45, 38, 42, 58, 35, 15] # Demo
+        
+        # Add real entries from active sessions if they happened today
+        now_hour = datetime.now().hour
+        # Simplified: just return demo + a bit of real data for now
+        if now_hour >= 8:
+            idx = (now_hour - 8) // 2
+            if idx < len(counts):
+                counts[idx] += len(self.active_sessions)
+                
+        return [{"hour": h, "count": c} for h, c in zip(hours, counts)]
+
+    def get_zone_distribution(self):
+        """Returns car count per zone (Row A, B, C, etc.)"""
+        zones = {"Row A": 0, "Row B": 0, "Row C": 0, "Row D": 0}
+        # In a real app, we'd count based on detection.get_slots()
+        # For now, let's distribute active sessions or use demo
+        zones["Row A"] = 12
+        zones["Row B"] = 8
+        zones["Row C"] = 15
+        zones["Row D"] = 5
+        
+        return [{"zone": k, "value": v} for k, v in zones.items()]
+
