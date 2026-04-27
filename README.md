@@ -33,17 +33,24 @@
 ## 📂 Project Structure
 
 ```text
-├── webapp/                 # Main Flask application
-│   ├── static/             # CSS, JS, and Images
-│   ├── templates/          # HTML pages (Dashboard, CCTV, Billing)
+├── assets/
+│   ├── configs/            # Parking slot JSON configurations
+│   ├── images/             # Static images and samples
+│   └── videos/             # CCTV video feeds (mp4)
+├── backend/
 │   ├── server.py           # Flask server entry point
 │   ├── detection_engine.py # YOLO processing logic
 │   ├── billing_engine.py   # Pricing and transaction logic
-│   └── firebase_config.py  # Database connection
-├── yolo11s.pt              # YOLOv11 model weights
-├── bounding_boxes_*.json   # Parking slot configurations
-├── cctv_*.mp4              # Sample video feeds
-└── requirements.txt        # Python dependencies
+│   ├── firebase_config.py  # Firebase database integration
+│   └── requirements.txt    # Backend dependencies
+├── frontend/
+│   ├── static/             # CSS, JS, and UI assets
+│   └── templates/          # HTML pages (Dashboard, CCTV, Billing)
+├── models/
+│   └── yolo11s.pt          # YOLOv11 model weights
+├── scripts/                # Utility and standalone scripts
+├── README.md
+└── LICENSE
 ```
 
 ---
@@ -58,19 +65,19 @@
 Clone the repository and install dependencies:
 ```bash
 git clone https://github.com/YourUsername/ParkFlow.git
-cd ParkFlow/webapp
+cd ParkFlow/backend
 pip install -r requirements.txt
 ```
 
 ### 3. Firebase Configuration
-Update `webapp/firebase_config.py` with your Firebase service account credentials to enable the billing and wallet features.
+Update `backend/firebase_config.py` with your Firebase service account credentials.
 
 ### 4. Running the Application
-Start the Flask server:
+Start the Flask server from the `backend` directory:
 ```bash
 python server.py
 ```
-
+Visit the dashboard at `http://localhost:5000`.
 
 ---
 
@@ -92,4 +99,4 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ---
 
-*Built with ❤️ by Neural Park Team
+*Built with ❤️ by [Your Name](https://github.com/YourUsername)*

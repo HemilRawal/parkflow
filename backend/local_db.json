@@ -1,0 +1,45 @@
+{
+  "wallets": {
+    "CAR-0001": {
+      "balance": 500,
+      "car_id": "CAR-0001"
+    },
+    "CAR-0002": {
+      "balance": 500,
+      "car_id": "CAR-0002"
+    },
+    "CAR-0003": {
+      "balance": 500,
+      "car_id": "CAR-0003"
+    },
+    "CAR-0004": {
+      "balance": 500,
+      "car_id": "CAR-0004"
+    }
+  },
+  "transactions": [],
+  "activity_logs": [
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0003",
+      "slot_id": "C2-A-03",
+      "timestamp": "09:55 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0002",
+      "slot_id": "C2-A-01",
+      "timestamp": "09:55 PM",
+      "time_ago": "Just now"
+    },
+    {
+      "type": "car_entered",
+      "car_id": "CAR-0001",
+      "slot_id": "C1-B-01",
+      "timestamp": "09:55 PM",
+      "time_ago": "Just now"
+    }
+  ],
+  "slots": {}
+}
