@@ -77,7 +77,6 @@ Start the Flask server from the `backend` directory:
 ```bash
 python server.py
 ```
-Visit the dashboard at `http://localhost:5000`.
 
 ---
 
@@ -99,4 +98,4 @@ Contributions are welcome! Feel free to open an issue or submit a pull request.
 
 ---
 
-*Built with ❤️ by [Your Name](https://github.com/YourUsername)*
+*Built with ❤️ by NeuralPark Team
